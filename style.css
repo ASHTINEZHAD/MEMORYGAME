@@ -1,0 +1,162 @@
+body {
+    background-color: #d8c5c5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    cursor: cell;
+}
+
+#game-container {
+    text-align: center;
+    display: none;
+}
+
+#game-board {
+    border: 5px solid #705f5f;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 15px;
+    padding: 15px 15px 15px 15px;
+    background-color: rgb(158, 142, 142);
+    border-radius: 12px;
+    cursor: cell;
+}
+
+.card {
+    width: 120px;
+    height: 165px;
+    border: 2px solid #8f7979;
+    cursor: cell;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    user-select: none;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.card .front {
+    background-size: cover;
+    background-position: center;
+    transform: rotateY(0deg);
+}
+
+.card .back {
+    background-size: cover;
+    background-position: center;
+    transform: rotateY(180deg);
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+#title {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+#winner-popup {
+    font-family: 'Domine', serif;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 70px 30px 70px;
+    background-color: #d8c5c5;
+    border: 3px solid #8d6161;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#player-scores {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#score1,
+#score2 {
+    font-family: 'Domine', serif;
+    font-size: 18px;
+    margin: 0;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 5px solid rgb(167, 106, 106)f2f;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    cursor: cell;
+}
+
+.popup-content {
+    font-family: 'Domine', serif;
+    font-size: 25px;
+    text-align: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.popup-content input {
+    width: 200px;
+    height: 30px;
+    margin: 10px;
+}
+
+.popup button {
+    font-family: 'Domine', serif;
+    font-size: 20px;
+    margin-top: 10px;
+    padding: 18px 50px;
+    background-color: #866c6c;
+    color: #ffffff;
+    border: none;
+    border-radius: 35px;
+    cursor: cell;
+}
+
+.popup button:hover {
+    background-color: #755858;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}

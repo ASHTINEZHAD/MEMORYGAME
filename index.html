@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Domine&family=Playfair+Display&family=Playfair+Display+SC&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <title>Memory Card Game</title>
+</head>
+
+<body>
+
+    <!-- pop up i början när man väljer namn på spelare -->
+    <section id="name-popup" class="popup">
+        <section class="popup-content">
+            <h2>Enter Player Names</h2>
+            <label for="player1Name">Player 1 Name:</label>
+            <input type="text" id="player1Name" placeholder="Player 1">
+            <br>
+            <label for="player2Name">Player 2 Name:</label>
+            <input type="text" id="player2Name" placeholder="Player 2">
+            <br>
+            <button onclick="startGame()">Start Game</button>
+        </section>
+    </section>
+
+    <section id="game-container">
+        <header id="title">Player 1's Turn</header>
+        <article id="game-board"></article>
+        <section id="player-scores">
+            <section id="score1">Player 1 Score: 0</section>
+            <section id="score2">Player 2 Score: 0</section>
+        </section>
+    </section>
+    
+    <!-- pop up efter spelet är slut  -->
+    <section id="winner-popup" class="popup">
+        <section class="popup-content">
+            <p id="winner-text"></p>
+            <button onclick="restartGame()">Restart</button>
+        </section>
+    </section>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
